@@ -1,0 +1,1120 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================
+   COLOR VARIABLES
+========================================= */
+
+:root {
+    --bg-color: #1e1e1e;
+    --bg-secondary: #252525;
+    --card-color: #2a2a2a;
+
+    --primary: #00e5e5;
+    --primary-light: #00ffff;
+
+    --text-color: #f1f1f1;
+    --text-secondary: #a9a9a9;
+
+    --border-color: rgba(0, 229, 229, 0.25);
+}
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 110px 10%;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 10%;
+
+    background: rgba(30, 30, 30, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border-color);
+
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--primary);
+    text-shadow: 0 0 12px rgba(0, 229, 229, 0.5);
+}
+
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+/* NAVIGATION UNDERLINE */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HOME SECTION
+========================================= */
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 229, 229, 0.08),
+            transparent 45%
+        );
+}
+
+.home-content {
+    max-width: 800px;
+    animation: fadeUp 1s ease;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    padding: 5px;
+    border: 3px solid var(--primary);
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 229, 0.4),
+        0 0 30px rgba(0, 229, 229, 0.15);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 0 15px var(--primary),
+        0 0 45px rgba(0, 229, 229, 0.4);
+}
+
+
+/* =========================================
+   HOME TEXT
+========================================= */
+
+.hello {
+    color: var(--text-secondary);
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.home-content h1 {
+    font-size: clamp(40px, 6vw, 72px);
+
+    margin: 8px 0;
+
+    color: white;
+    line-height: 1.2;
+
+    transition: 0.3s ease;
+}
+
+.home-content h1:hover {
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(0, 229, 229, 0.25);
+}
+
+
+/* ROLES */
+
+.roles {
+    color: var(--primary);
+
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* INTRO */
+
+.intro {
+    max-width: 600px;
+    margin: auto;
+
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+
+.section-title {
+    text-align: center;
+
+    font-size: clamp(32px, 4vw, 45px);
+
+    color: white;
+
+    margin-bottom: 50px;
+
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 3px;
+
+    background: var(--primary);
+
+    margin: 10px auto 0;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+#about {
+    background: var(--bg-secondary);
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+    font-size: 17px;
+
+    padding: 30px;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    transition: 0.4s ease;
+}
+
+.about-content:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 12px 30px rgba(0, 229, 229, 0.1);
+}
+
+
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
+#skills {
+    background: var(--bg-color);
+}
+
+
+/* FIXED SKILLS CONTAINER */
+
+.skills-container {
+    display: grid;
+
+    /*
+       Wider cards prevent long words
+       like "Communication" from overflowing
+    */
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* SKILL CARD */
+
+.skill-card {
+    background: var(--card-color);
+
+    padding: 35px 20px;
+
+    /* Important for text overflow */
+    min-width: 0;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border-color);
+
+    text-align: center;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* SKILL CARD HOVER */
+
+.skill-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    box-shadow:
+        0 12px 30px rgba(0, 229, 229, 0.15);
+}
+
+
+/* SKILL TITLE - FIXED */
+
+.skill-card h3 {
+    color: white;
+
+    margin-bottom: 8px;
+
+    font-size: clamp(16px, 1.5vw, 18px);
+
+    transition: 0.3s ease;
+
+    /* Prevent text from going outside */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+
+    text-align: center;
+}
+
+
+/* SKILL DESCRIPTION */
+
+.skill-card p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+
+    overflow-wrap: break-word;
+}
+
+.skill-card:hover h3 {
+    color: var(--primary);
+}
+
+.skill-card:hover p {
+    color: white;
+}
+
+
+/* =========================================
+   ACHIEVEMENTS SECTION
+========================================= */
+
+#achievements {
+    background: var(--bg-secondary);
+}
+
+.achievement-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+
+/* ACHIEVEMENT CARD */
+
+.achievement-card {
+    background: var(--card-color);
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border-color);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 15px 35px rgba(0, 229, 229, 0.15);
+}
+
+
+/* ACHIEVEMENT IMAGE */
+
+.achievement-image {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.achievement-card:hover .achievement-image {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+}
+
+
+.achievement-card h3 {
+    color: white;
+
+    margin-bottom: 8px;
+
+    transition: color 0.3s ease;
+
+    overflow-wrap: break-word;
+}
+
+.achievement-card:hover h3 {
+    color: var(--primary);
+}
+
+.achievement-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+#projects {
+    background: var(--bg-color);
+}
+
+.project-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+
+/* PROJECT CARD */
+
+.project-card {
+    background: var(--card-color);
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border-color);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 15px 35px rgba(0, 229, 229, 0.15);
+}
+
+
+.project-card h3 {
+    color: white;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: var(--primary);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* PROJECT TECHNOLOGY */
+
+.project-tech {
+    margin-top: 15px;
+    color: var(--primary);
+    font-size: 13px;
+}
+
+.project-tech strong {
+    color: white;
+}
+
+.project-card:hover .project-tech strong {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+#contact {
+    background: var(--bg-secondary);
+}
+
+.contact-content {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+}
+
+.contact-content p {
+    margin: 15px 0;
+
+    color: var(--text-secondary);
+
+    transition: 0.3s ease;
+}
+
+.contact-content p:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 12px 28px;
+
+    background: var(--primary);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    border: 2px solid var(--primary);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    background: transparent;
+
+    color: var(--primary);
+
+    box-shadow:
+        0 8px 25px rgba(0, 229, 229, 0.35);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: #171717;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+footer:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        font-size: 12px;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        max-width: 75%;
+    }
+
+    section {
+        padding: 100px 6%;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+
+    .achievement-image {
+        height: 200px;
+    }
+
+    /* RESPONSIVE SKILLS */
+
+    .skills-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 500px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 12px 5%;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        max-width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 16px;
+
+        font-size: 11px;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+    }
+
+    section {
+        min-height: auto;
+
+        padding: 140px 6% 80px;
+    }
+
+    #home {
+        min-height: 100vh;
+    }
+
+    .profile-image {
+        width: 130px;
+        height: 130px;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .roles {
+        font-size: 16px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+
+    /* MOBILE SKILLS */
+
+    .skills-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 22px 10px;
+    }
+
+    .skill-card h3 {
+        font-size: 15px;
+    }
+
+    .skill-card p {
+        font-size: 11px;
+    }
+
+
+    /* ACHIEVEMENTS AND PROJECTS */
+
+    .achievement-container,
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-image {
+        height: 210px;
+    }
+
+    .about-content,
+    .contact-content {
+        padding: 22px 18px;
+    }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+}
+/* =========================================
+   CONTACT ITEMS WITH LOGOS
+========================================= */
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    max-width: 650px;
+    margin: auto;
+
+    text-align: left;
+
+    padding: 35px;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+}
+
+
+/* CONTACT LINK */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 18px;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    border: 1px solid rgba(0, 229, 229, 0.12);
+
+    border-radius: 6px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ICON */
+
+.contact-item i {
+    width: 25px;
+
+    font-size: 22px;
+
+    color: var(--primary);
+
+    transition: 0.3s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.contact-item:hover {
+    transform: translateX(8px);
+
+    color: white;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 5px 20px rgba(0, 229, 229, 0.12);
+}
+
+
+.contact-item:hover i {
+    transform: scale(1.15);
+
+    text-shadow:
+        0 0 10px var(--primary);
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 500px) {
+
+    .contact-content {
+        padding: 20px;
+    }
+
+    .contact-item {
+        padding: 13px;
+
+        font-size: 13px;
+
+        gap: 10px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .contact-item i {
+        font-size: 19px;
+
+        flex-shrink: 0;
+    }
+
+}
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+#gallery {
+    background: var(--bg-color);
+}
+
+.gallery-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border-color);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* GALLERY HOVER */
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 15px 35px rgba(0, 229, 229, 0.18);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================
+   GALLERY RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .gallery-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .gallery-item img {
+        height: 240px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 280px;
+    }
+
+}
